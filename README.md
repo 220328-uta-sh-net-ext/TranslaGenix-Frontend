@@ -37,10 +37,12 @@
   - [Microsoft Computer Vision API](https://centraluseuap.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2/operations/56f91f2e778daf14a499f20d)
     - Use machine learning to understand your images with industry-leading prediction accuracy Train machine learning models that classify images by your custom labels using AutoML Vision. Detect objects and faces, read handwriting, and build valuable image metadata with Vision API
 
-  - [Okta API]
-  
-  -[Speech-to-Text API]
-  
+  - [Okta API](https://developer.okta.com/docs/reference/)
+    - You can use it to implement basic auth functions such as signing in your users and programmatically managing your Okta objects.
+    
+  - [Speech-to-Text API]
+    - Accurately convert speech into text with an API
+
 ## License
 
-This project uses the following license:MIT License.
+This project uses the following license:[<MIT_License>](https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt).
