@@ -29,7 +29,9 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/app/speech-to-text/annyang.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -96,7 +98,9 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/app/speech-to-text/annyang.min.js"
+            ]
           }
         }
       }

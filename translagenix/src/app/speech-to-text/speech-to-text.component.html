@@ -1,1 +1,54 @@
-<p>speech-to-text works!</p>
+<div>
+    <div>Translate From</div>
+    <select name="recognizedLanguage" id="language" [(ngModel)]="recognizedLanguage">
+      <option value="es">Spanish</option>
+      <option value="en-US">English</option>
+      <option value="fr-FR">French</option>
+      <option value="zh-CN">Chinese</option>
+      
+    </select>
+    <div>Translate To</div>
+    <select name="translatedLanguage" id="translateLanuage" [(ngModel)]= "translatedLanguage">
+      <option value="es">Spanish</option>
+      <option value="en-US">English</option>
+      <option value="fr-FR">French</option>
+      <option value="zh-CN">Chinese</option>
+      
+    </select>
+    </div>
+    <div *ngIf="voiceActiveSectionDisabled; else voicesection;">
+    
+      
+    </div>
+    <button type="button" (click)="startVoiceRecognition()">Record</button>
+    <button type="button" (click)="translation()">Translate</button>
+    
+    <ng-template #voicesection>
+      <ng-container *ngIf="!voiceActiveSectionError; else failure">
+        <ng-container *ngIf="voiceText; else start">
+            <span>{{voiceText}}</span>
+        </ng-container>
+        <ng-template #start>
+          <ng-container
+            *ngIf="voiceActiveSectionListening; else beginning">
+            <span>Listening...</span>
+          </ng-container>
+          <ng-template #beginning>
+            <span>Start talking...</span>
+          </ng-template>
+        </ng-template>
+      </ng-container>
+      <ng-template #failure>
+        <span>Didn't catch that</span>
+      </ng-template>
+      <div>
+        <button (click)="closeVoiceRecognition()">Close</button>
+        <button (click)="startVoiceRecognition()">Restart</button>
+     
+      </div>
+      
+    </ng-template>
+    
+    <div>
+        <span>{{translatedText}}</span>
+    </div>
