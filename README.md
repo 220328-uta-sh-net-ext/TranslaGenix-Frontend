@@ -11,7 +11,7 @@
   - Sql
   - .Net 6
   - Asp.Net core web api
-  - ADO.Net/Entity Framework Cor
+  - ADO.Net/Entity Framework Core
 - Infra
   - Git
   - Docker
