@@ -1,4 +1,5 @@
 import { Component, NgZone } from '@angular/core';
+import { NavbarService } from '../navbar.service';
 
 declare const annyang: any;
 declare var require: any
@@ -19,9 +20,14 @@ export class SpeechToTextComponent {
   voiceActiveSectionListening: boolean = false;
   voiceText: any;
   translatedText:String = ""
-  recognizedLanguage: String = "";
-  translatedLanguage: String = "";
-  constructor(private ngZone: NgZone) { }
+  recognizedLanguage: String = "en-US";
+  translatedLanguage: String = "en-US";
+
+  constructor(private ngZone: NgZone, private nav: NavbarService) { }
+
+  ngOnInit(): void {
+    this.nav.show();
+  }
 
   initializeVoiceRecognitionCallback(): void {
     annyang.addCallback('error', (err: any) => {
