@@ -30,4 +30,3 @@ jobs:
       working-directory: translagenix
     - run: npm test -- --watch=false --browsers=ChromeHeadless
       working-directory: translagenix
-
