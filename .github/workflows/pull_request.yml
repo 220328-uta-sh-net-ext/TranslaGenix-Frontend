@@ -28,6 +28,6 @@ jobs:
       working-directory: translagenix
     - run: npm run build --if-present
       working-directory: translagenix
-    - run: npm test
+    - run: npm test -- --watch=false --browsers=ChromeHeadless
       working-directory: translagenix
 
