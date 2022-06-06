@@ -134,6 +134,13 @@
     </select>
   </section>
 </div>
+<div class="recordandtranslation">
+  <div class = "textBox">
+    <div class = "translation"><h4>{{translatedText}}</h4></div>
+  </div>
+      
+</div>
+
 
 <div class="speechToText2">
 <div *ngIf="voiceActiveSectionDisabled; else voicesection;">
@@ -177,9 +184,7 @@
     <button type="button" button (click)="startVoiceRecognition()">Restart</button>
 
   </div>
-  <div class="translation">
-    <span><h4>{{translatedText}}</h4></span>
-  </div>
+  
 
 </ng-template>
 

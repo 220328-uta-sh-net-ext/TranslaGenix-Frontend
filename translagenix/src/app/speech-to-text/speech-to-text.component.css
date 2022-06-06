@@ -70,21 +70,60 @@ button
     border-style: solid;
     border-color: #111827;
 }
+.recordandtranslation
+{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    width: 1300px;
+    background-color: #4D648D;
 
+
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px;
+    border-style: solid;
+    border-color: #111827;
+}
 .listening
 {
-    align-self: left;
-    justify-self: left;
+
     padding: 50px;
     color: #d0e1f9;
 }
 
+.textBox
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    height: 70px;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    text-align: center;
+
+}
 .translation
 {
-    align-self: right;
-    justify-self: right;
-    padding: 50px;
-    color: #d0e1f9;
+
+    
+    color: #111827;
+    background-color: white;
+    height: 30px;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    text-align: center;
+
+
 }
 
 
