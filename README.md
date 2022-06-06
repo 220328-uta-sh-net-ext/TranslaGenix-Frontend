@@ -40,7 +40,7 @@
   - [Okta API](https://developer.okta.com/docs/reference/)
     - You can use it to implement basic auth functions such as signing in your users and programmatically managing your Okta objects.
     
-  - [Speech-to-Text API]()
+  - [Speech-to-Text API](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/)
     - Accurately convert speech into text with an API
 
 ## License
