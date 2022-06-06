@@ -1,0 +1,190 @@
+/*
+{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: 500px;
+    margin-right: 500px;
+}
+*/
+/*
+#voicesection
+{
+    background-color: #283655;
+    color: white;
+    align-content: center;
+    justify-content: right;
+    line-height: center;
+    border-radius: 10px;    
+    margin-top: 100px;
+    margin-bottom: 500px;
+}
+*/
+
+#language
+{
+    height: 40px;
+}
+#translateLanuage
+{
+    height: 40px;
+}
+
+.from
+{
+    margin-right:50px;
+
+}
+h3
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    color: white;
+}
+
+select
+{
+    display: flex;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+
+
+}
+
+button
+{
+
+    justify-content: center;
+    margin-top: 20px;
+    margin-right: 50px;
+    background-color: #111827;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    width: 130px;
+
+}
+
+/*
+.language
+{
+    display: flex;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;  
+}
+*/
+#translationDiv
+{
+    display: block;
+    justify-content: center;
+    align-content: center;
+    
+}
+#translateButton
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+.startandclose
+{
+
+    margin-top: 10px;
+    margin-left: 50px;
+
+
+}
+.speechToText1
+{
+    height: 200px;
+    width: 1300px;
+    background-color: #4D648D;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px;
+    border-style: solid;
+    border-color: #111827;
+}
+.recordandtranslation
+{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    width: 1300px;
+    background-color: #4D648D;
+
+
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px;
+    border-style: solid;
+    border-color: #111827;
+}
+.listening
+{
+
+    padding: 50px;
+    color: #d0e1f9;
+}
+
+.textBox
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 20px;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    text-align: center;
+
+}
+.translation
+{
+
+    
+    color: #111827;
+    background-color: white;
+    margin-top:70px;
+    padding: 20px;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    text-align: center;
+
+
+}
+
+
+.speechToText2
+{
+    height: 300px;
+    width: 1300px;
+    background-color: #4D648D;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px;
+    border-style: solid;
+    border-color: #283655;
+}

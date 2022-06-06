@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { NavbarService } from '../navbar.service';
 
 @Component({
@@ -7,8 +8,11 @@ import { NavbarService } from '../navbar.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
-  constructor(public nav: NavbarService) { }
+  goToHome(){
+    console.log("hatr")
+    this.router.navigate(["home"])
+  }
+  constructor(public nav: NavbarService,private router:Router) { }
 
   ngOnInit(): void {
   }
