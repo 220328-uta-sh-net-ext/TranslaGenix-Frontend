@@ -1,10 +1,8 @@
-<div>
+<link rel="stylesheet" href="speech-to-text.component.css">
 
-  <div class="speechToText1">
-
-  </div>
-  <section>
-    <h3>Translate From</h3>
+<div class="speechToText1">
+  <section class="from">
+    <h3>Translate From:</h3>
     <select name="recognizedLanguage" id="language" [(ngModel)]="recognizedLanguage">
       <option value="en-US">English (US)</option>
       <option value="es-MX">Spanish (Mexico)</option>
@@ -69,8 +67,8 @@
 
     </select>
   </section>
-  <section>
-    <h3>Translate To</h3>
+  <section class="to">
+    <h3>Translate To:</h3>
     <select name="translatedLanguage" id="translateLanuage" [(ngModel)]="translatedLanguage">
       <option value="en-US">English (US)</option>
       <option value="es-MX">Spanish (Mexico)</option>
@@ -137,39 +135,54 @@
   </section>
 </div>
 
-
+<div class="speechToText2">
 <div *ngIf="voiceActiveSectionDisabled; else voicesection;">
-
-
 </div>
-<button type="button" (click)="startVoiceRecognition()">Record</button>
-<button type="button" (click)="translation()">Translate</button>
+
+<div>
+  <button type="button" (click)="startVoiceRecognition()">Record</button>
+  <button type="button" (click)="translation()">Translate</button>
+</div>
+
 
 <ng-template #voicesection>
-  <ng-container *ngIf="!voiceActiveSectionError; else failure">
-    <ng-container *ngIf="voiceText; else start">
-      <span>{{voiceText}}</span>
-    </ng-container>
-    <ng-template #start>
-      <ng-container *ngIf="voiceActiveSectionListening; else beginning">
-        <span>Listening...</span>
-      </ng-container>
-      <ng-template #beginning>
-        <span>Start talking...</span>
-      </ng-template>
-    </ng-template>
-  </ng-container>
-  <ng-template #failure>
-    <span>Didn't catch that</span>
-  </ng-template>
-  <div>
-    <button (click)="closeVoiceRecognition()">Close</button>
-    <button (click)="startVoiceRecognition()">Restart</button>
+  <div class="listening">
+    <ng-container *ngIf="!voiceActiveSectionError; else failure">
 
+      <ng-container *ngIf="voiceText; else start">
+        <span><h4>{{voiceText}}</h4></span>
+      </ng-container>
+
+      <ng-template #start>
+
+        <ng-container *ngIf="voiceActiveSectionListening; else beginning">
+          <span>Listening...</span>
+        </ng-container>
+
+        <ng-template #beginning>
+          <span>Start talking...</span>
+        </ng-template>
+
+      </ng-template>
+
+    </ng-container>
+
+    <ng-template #failure>
+      <span>Didn't catch that</span>
+    </ng-template>
+  </div>
+
+  <div>
+    <button type="button" button (click)="closeVoiceRecognition()">Close</button>
+    <button type="button" button (click)="startVoiceRecognition()">Restart</button>
+
+  </div>
+  <div class="translation">
+    <span><h4>{{translatedText}}</h4></span>
   </div>
 
 </ng-template>
 
-<div>
-  <span>{{translatedText}}</span>
+
+
 </div>

@@ -6,25 +6,8 @@
     margin-right: 500px;
 }
 */
-
-
-h3
-{
-    display: flex;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-select
-{
-    display: flex;
-    align-content: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-button
+/*
+#voicesection
 {
     background-color: #283655;
     color: white;
@@ -34,19 +17,89 @@ button
     border-radius: 10px;    
     margin-top: 100px;
     margin-bottom: 500px;
-    margin-left: 500px;
-    margin-right: 50px;
 }
+*/
+
+h3
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
+
+select
+{
+    display: flex;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+
+}
+
+button
+{
+    margin-top: 75px;
+    justify-content: center;
+}
+
+/*
+.language
+{
+    display: flex;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;  
+}
+*/
 
 .speechToText1
 {
-    height: 250px;
-    width: 600px;
+    height: 200px;
+    width: 1300px;
     background-color: #4D648D;
     display: flex;
     justify-content: center;
     margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px;
+    border-style: solid;
+    border-color: #111827;
+}
+
+.listening
+{
+    align-self: left;
+    justify-self: left;
+    padding: 50px;
+    color: #d0e1f9;
+}
+
+.translation
+{
+    align-self: right;
+    justify-self: right;
+    padding: 50px;
+    color: #d0e1f9;
+}
+
+
+.speechToText2
+{
+    height: 300px;
+    width: 1300px;
+    background-color: #4D648D;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
     margin-bottom: 50px;
     margin-left: auto;
     margin-right: auto;
+    border: 3px;
+    border-style: solid;
+    border-color: #283655;
 }
