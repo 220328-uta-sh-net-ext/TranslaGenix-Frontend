@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 import { SpeechToTextComponent } from './speech-to-text/speech-to-text.component';
 import { LoginComponent } from './login/login.component';
+import { FileocrComponent } from './fileocr/fileocr.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { LoginComponent } from './login/login.component';
     NavbarComponent,
     HomeComponent,
     SpeechToTextComponent,
-    LoginComponent
+    LoginComponent,
+    FileocrComponent
   ],
   imports: [
     BrowserModule,
