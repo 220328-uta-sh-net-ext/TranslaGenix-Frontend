@@ -20,6 +20,20 @@
 }
 */
 
+#language
+{
+    height: 40px;
+}
+#translateLanuage
+{
+    height: 40px;
+}
+
+.from
+{
+    margin-right:50px;
+
+}
 h3
 {
     display: flex;
@@ -28,6 +42,7 @@ h3
     margin-left: auto;
     margin-right: auto;
     padding: 20px;
+    color: white;
 }
 
 select
@@ -36,14 +51,23 @@ select
     align-content: center;
     margin-left: auto;
     margin-right: auto;
-    padding: 10px;
+
 
 }
 
 button
 {
-    margin-top: 75px;
+
     justify-content: center;
+    margin-top: 20px;
+    margin-right: 50px;
+    background-color: #111827;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    width: 130px;
+
 }
 
 /*
@@ -55,7 +79,28 @@ button
     margin-right: auto;  
 }
 */
+#translationDiv
+{
+    display: block;
+    justify-content: center;
+    align-content: center;
+    
+}
+#translateButton
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+.startandclose
+{
 
+    margin-top: 10px;
+    margin-left: 50px;
+
+
+}
 .speechToText1
 {
     height: 200px;
@@ -102,7 +147,7 @@ button
     align-items: center;
     justify-content: center;
     background-color: white;
-    height: 70px;
+    padding: 20px;
     width: 1000px;
     margin-left: auto;
     margin-right: auto;
@@ -116,7 +161,8 @@ button
     
     color: #111827;
     background-color: white;
-    height: 30px;
+    margin-top:70px;
+    padding: 20px;
     width: 1000px;
     margin-left: auto;
     margin-right: auto;

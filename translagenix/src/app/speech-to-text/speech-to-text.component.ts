@@ -19,7 +19,7 @@ export class SpeechToTextComponent {
   voiceActiveSectionSuccess: boolean = false;
   voiceActiveSectionListening: boolean = false;
   voiceText: any;
-  translatedText:String = ""
+  translatedText:String = "Translated Text"
   recognizedLanguage: String = "en-US";
   translatedLanguage: String = "en-US";
 
@@ -71,7 +71,7 @@ export class SpeechToTextComponent {
     this.voiceActiveSectionError = false;
     this.voiceActiveSectionSuccess = false;
     this.voiceText = undefined;
-    this.translatedText = "";
+    this.translatedText = "Translated Text";
     annyang.setLanguage(this.recognizedLanguage);
 
     if (annyang) {
@@ -92,7 +92,7 @@ export class SpeechToTextComponent {
     this.voiceActiveSectionSuccess = false;
     this.voiceActiveSectionListening = false;
     this.voiceText = undefined;
-    this.translatedText = "";
+    this.translatedText = "Translated Text";
     if (annyang) {
       annyang.abort();
     }
