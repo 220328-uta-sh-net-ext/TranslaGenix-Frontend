@@ -15,5 +15,9 @@ export class FileocrService {
     return this.http.post(this.baseApiUrl, file, {headers: {'Content-Type':'application/octet-stream',
     'Ocp-Apim-Subscription-Key': 'PUT_YOU_KEY_HERE'}})
   }
+  fromUrl(url:string):Observable<any>{
+    return this.http.post(this.baseApiUrl, {url}, {headers: {'Content-Type':'application/json',
+    'Ocp-Apim-Subscription-Key': 'PUT_YOU_KEY_HERE'}})
+  }
   constructor(private http:HttpClient) { }
 }

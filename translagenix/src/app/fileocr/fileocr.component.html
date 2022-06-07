@@ -1,9 +1,25 @@
-  <div class="text-center">
-	<input class="form-control" type="file"
-			(change)="onChange($event)">
-
-	<button (click)="onUpload()"
-		class="btn btn-success">
-		Upload
+<div class="text-center">
+	<input class="form-control" type="file" (change)="onChange($event)" />
+  
+	<img src={{this.imageSrc}} alt="no preview" height="200px" /><br />
+  
+	<button (click)="printResponse()" class="btn btn-success">Text</button>
+  
+	<button class="btn btn-success" name="loading" (click)="onUpload()">
+	  Upload
 	</button>
-</div>
+  
+	<textarea id="image-text-card">
+	   {{ allText }}
+	 </textarea>
+	 <form class = "fileocr" (ngSubmit)="onUrl()">
+		<div class = "input-div"> 
+			<img src = {{this.url}} height="200px"><br/> 
+	 <label for="image-url">Image url:</label>
+	 <input id="image-url"  name="image-url" type = "text" required [(ngModel)] = "url" >
+	</div>
+</form>
+	 <button (click)="onUrl()"
+	 class="btn btn-success">
+	 URL
+ </button>
