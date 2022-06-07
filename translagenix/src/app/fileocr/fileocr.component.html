@@ -1,9 +1,9 @@
 <div class="text-center">
 	<input class="form-control" type="file" (change)="onChange($event)" />
   
-	<img src="{{ this.file }}" alt="no preview" height="200px" /><br />
+	<img src={{this.imageSrc}} alt="no preview" height="200px" /><br />
   
-	<button (click)="printResponse()" class="btn btn-success">Grab</button>
+	<button (click)="printResponse()" class="btn btn-success">Text</button>
   
 	<button class="btn btn-success" name="loading" (click)="onUpload()">
 	  Upload

@@ -12,7 +12,15 @@ export class FileocrComponent implements OnInit {
 
   onChange(event:any) {
 		this.file = event.target.files[0];
+    var reader = new FileReader();
+
+        reader.onload = (event:any) => {
+            this.imageSrc = event.target.result
+        }
+        reader.readAsDataURL(event.target.files[0]);
 	}
+
+  imageSrc: string = "";
 
   error: boolean = false;
   response: any;
