@@ -12,4 +12,14 @@
 	<textarea id="image-text-card">
 	   {{ allText }}
 	 </textarea>
-  </div>
+	 <form class = "fileocr" (ngSubmit)="onUrl()">
+		<div class = "input-div"> 
+			<img src = {{this.url}} height="200px"><br/> 
+	 <label for="image-url">Image url:</label>
+	 <input id="image-url"  name="image-url" type = "text" required [(ngModel)] = "url" >
+	</div>
+</form>
+	 <button (click)="onUrl()"
+	 class="btn btn-success">
+	 URL
+ </button>

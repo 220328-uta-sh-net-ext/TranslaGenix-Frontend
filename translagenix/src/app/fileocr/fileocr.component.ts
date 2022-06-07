@@ -11,6 +11,7 @@ export class FileocrComponent implements OnInit {
 	file: File | null = null; 
 
   onChange(event:any) {
+    this.imageSrc = ""
 		this.file = event.target.files[0];
     var reader = new FileReader();
 
@@ -45,7 +46,22 @@ export class FileocrComponent implements OnInit {
       );
     return this.response;
   }
-
+  url:string =""
+  onUrl():any{
+    //if (this.file !== null)
+    this.fileocrService.fromUrl(this.url)
+    .subscribe((data) =>{
+      console.log(data);
+      this.response = data.regions[0].lines;
+     // console.log(data.regions[0].lines)
+    },
+    (error) =>{
+      console.log(error)
+      // Makes error message appear through ngIf
+      this.error = true;
+    })
+    return this.response;
+  }
   printResponse(): any {
     this.allText = "";
     this.response.forEach((word: any) => {
