@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FileocrService } from '../fileocr.service';
 
 @Component({
-  selector: 'app-fileocr',
+  selector: 'fileocr',
   templateUrl: './fileocr.component.html',
   styleUrls: ['./fileocr.component.css']
 })
