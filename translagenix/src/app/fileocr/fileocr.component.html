@@ -23,3 +23,31 @@
 	 class="btn btn-success">
 	 URL
  </button>
+
+ <form class = "translation" (ngSubmit)="translate()">
+	<div class = "input-div">
+		<label for="text"> Text:</label>
+		<input id="text" name="text" type = "text" required [(ngModel)] = "text" >
+	</div>
+   
+  
+  
+	<div class = "input-div">
+	  <label for="language"> Translate to:</label>
+	  <select name="language" id="language" [(ngModel)] = "endLanguageCode">
+		<option value="en">English</option>
+		<option value="uk">Ukrainian</option>
+		<option value="pl">Polish</option>
+		<option value="hi">Hindi</option>
+		<option value="gu">Gujarati</option>
+		<option value="ar">Arabic</option>
+	  </select>
+	</div>
+  
+  
+	<button id="translate-button"  type = "submit" value = "translation">TRANSLATE</button>
+	<textarea id="translation-card"> {{this.translatedText}}
+	</textarea> 
+  <!-- <p>{{this.translationService.text}}</p> -->
+  
+  </form>

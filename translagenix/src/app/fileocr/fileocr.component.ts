@@ -25,10 +25,13 @@ export class FileocrComponent implements OnInit {
 
   error: boolean = false;
   response: any;
-  regions: any;
+  text:string = "";
+  endLanguageCode:string = "";
+  translatedText:string = "";
+/*   regions: any;
   lines: any;
   words: any;
-  list: any = [];
+  list: any = []; */
 
   onUpload(): any {
     if (this.file !== null)
@@ -61,6 +64,18 @@ export class FileocrComponent implements OnInit {
       this.error = true;
     })
     return this.response;
+  }
+  translate():void{
+    this.fileocrService.translation(this.text, this.endLanguageCode)
+    .subscribe((data) =>{
+      console.log(data[0].translations[0].text)
+      this.translatedText = data[0].translations[0].text
+    },
+    (error) =>{
+      console.log(error)
+      // Makes error message appear through ngIf
+      this.error = true;
+    })
   }
   printResponse(): any {
     this.allText = "";
