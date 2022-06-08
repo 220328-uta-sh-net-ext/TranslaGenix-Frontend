@@ -1,4 +1,5 @@
 import { Component} from '@angular/core';
+import { NavbarService } from '../navbar.service';
 
 
 interface RecommendedVoices {
@@ -20,19 +21,22 @@ export class WordADayComponent{
 	public voices: SpeechSynthesisVoice[];
 
 	// I initialize the app component.
-	constructor() {
+	constructor(private nav: NavbarService) {
 
 		this.voices = [];
 		this.rates = [ .25, .5, .75, 1, 1.25, 1.5, 1.75, 2 ];
 		this.selectedVoice = null;
 		this.selectedRate = 1;
-		// Dirty Dancing for the win!
-		this.text = "Me? ... I'm scared of everything. I'm scared of what I saw, of what I did, of who I am. And most of all, I'm scared of walking out of this room and never feeling the rest of my whole life ... the way I feel when I'm with you.";
+		// Bruce Leroy from The Last Dragon for the win!
+		this.text = "The secret awaits eyes unclouded by ambition.  Those who are bound by desire see only that that which can be held in their hands.";
 		this.sayCommand = "";
-
+		
 		// These are "recommended" in so much as that these are the voices that I (Ben)
 		// could understand most clearly.
 		this.recommendedVoices = Object.create( null );
+
+		/*  commented out.  none of these voices work for our component
+
 		this.recommendedVoices[ "Alex" ] = true;
 		this.recommendedVoices[ "Alva" ] = true;
 		this.recommendedVoices[ "Damayanti" ] = true;
@@ -49,7 +53,7 @@ export class WordADayComponent{
 		this.recommendedVoices[ "Veena" ] = true;
 		this.recommendedVoices[ "Victoria" ] = true;
 		this.recommendedVoices[ "Yuri" ] = true;
-
+		*/
 	}
 
 	// ---
@@ -57,7 +61,9 @@ export class WordADayComponent{
 	// ---
 
 	// I demo the currently-selected voice.
-  /*
+	
+  /*  commented out unnecessary default statement
+
 	public demoSelectedVoice() : void {
 
 		if ( ! this.selectedVoice ) {

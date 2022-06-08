@@ -1,0 +1,42 @@
+/*
+{
+    display: flex;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+*/
+
+.form-field
+{
+    display: flex;
+    margin-top: 75px;
+    margin-bottom: 75px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+
+button
+{
+    display: inline-block;
+    justify-content: center;
+    margin-top: 20px;
+    margin-right: 50px;
+    margin-left: 500px;
+    background-color: #111827;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    width: 130px;
+}
+
+
+/*
+form-field
+form-field__content
+form-field__subnote
+form-field__label
+form-actions
+*/

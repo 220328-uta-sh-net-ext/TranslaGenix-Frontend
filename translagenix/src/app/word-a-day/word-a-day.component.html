@@ -3,26 +3,26 @@
 		Voice:
 	</label>
 	<div class="form-field__content">
-		<select
-			id="voice-control"
-			name="voice"
-			[(ngModel)]="selectedVoice"
-			class="form-field__control">
+		<select id="voice-control" name="voice" [(ngModel)]="selectedVoice" class="form-field__control">
 			<option value="">- Select a voice -</option>
-			<option
-				*ngFor="let voice of voices"
-				[ngValue]="voice">
+			<option *ngFor="let voice of voices" [ngValue]="voice">
 				{{ voice.name }}
-
+				<!-- commented out unnecessary variables
+					
 				<ng-template [ngIf]="recommendedVoices[ voice.name ]">
 					&larr; Recommended
 				</ng-template>
+				-->
 			</option>
 		</select>
+
+		<!--  commented out unnecessary descriptions
 
 		<div class="form-field__subnote">
 			( &larr; ) indicates a voice that Ben could understand clearly.
 		</div>
+		-->
+
 	</div>
 </div>
 
@@ -31,14 +31,8 @@
 		Speed:
 	</label>
 	<div class="form-field__content">
-		<select
-			id="rate-control"
-			name="rate"
-			[(ngModel)]="selectedRate"
-			class="form-field__control">
-			<option
-				*ngFor="let rate of rates"
-				[ngValue]="rate">
+		<select id="rate-control" name="rate" [(ngModel)]="selectedRate" class="form-field__control">
+			<option *ngFor="let rate of rates" [ngValue]="rate">
 				{{ rate }}
 
 				<ng-template [ngIf]="( rate === 1 )">
@@ -54,35 +48,23 @@
 		Text:
 	</label>
 	<div class="form-field__content">
-		<textarea
-			id="text-control"
-			name="text"
-			[(ngModel)]="text"
-			(input)="updateSayCommand()"
-			(keydown.Meta.Enter)="speak()"
-			class="form-field__control"
-		></textarea>
+		<textarea id="text-control" name="text" [(ngModel)]="text" (input)="updateSayCommand()"
+			(keydown.Meta.Enter)="speak()" class="form-field__control"></textarea>
 
+		<!--		
 		<div class="form-field__subnote">
 			You can hit <code>CMD+Enter</code> to speak text.
 		</div>
+		-->
 	</div>
 </div>
 
 <div class="form-actions">
-	<button
-		type="button"
-		(click)="speak()"
-		class="form-actions__button">
+	<button type="button" (click)="speak()" class="form-actions__button">
 		Speak text
 	</button>
 
-	<button
-		type="button"
-		(click)="stop()"
-		class="form-actions__button form-actions__button--secondary">
+	<button type="button" (click)="stop()" class="form-actions__button form-actions__button--secondary">
 		Stop speaking
 	</button>
 </div>
-
-
