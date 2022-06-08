@@ -57,6 +57,7 @@ export class WordADayComponent{
 	// ---
 
 	// I demo the currently-selected voice.
+  /*
 	public demoSelectedVoice() : void {
 
 		if ( ! this.selectedVoice ) {
@@ -72,7 +73,7 @@ export class WordADayComponent{
 		this.synthesizeSpeechFromText( this.selectedVoice, this.selectedRate, demoText );
 
 	}
-
+*/
 
 	// I get called once after the inputs have been bound for the first time.
 	public ngOnInit() : void {
