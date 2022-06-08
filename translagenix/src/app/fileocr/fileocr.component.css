@@ -1,0 +1,57 @@
+.text-center {
+  padding-top: 150px;
+}
+
+.form-control {
+  width: 1000px;
+  height: 65px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+}
+
+.form-control:hover{
+    border: solid darkblue;
+}
+
+.btn {
+  background-color: darkblue;
+  border: 2pt solid cyan;
+  margin: 2px;
+}
+
+.btn:hover {
+  background-color:cyan ;
+  border: 2pt solid darkblue;
+  color: darkblue
+}
+
+#image-text-card {
+  width: 50%;
+  height: 120px;
+  border-radius: 15px;
+}
+
+label{
+    padding-right: 10px;
+}
+
+input {
+    border-radius: 15px;
+    width: 35%;
+}
+
+select{
+    border-radius: 15px; 
+}
+
+input:hover{
+    border: solid darkblue;
+}
+
+
+#translation-card {
+    width: 50%;
+    height: 120px;
+    border-radius: 15px;
+}
