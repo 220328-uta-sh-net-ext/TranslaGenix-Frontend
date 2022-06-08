@@ -19,5 +19,11 @@ export class FileocrService {
     return this.http.post(this.baseApiUrl, {url}, {headers: {'Content-Type':'application/json',
     'Ocp-Apim-Subscription-Key': 'PUT_YOU_KEY_HERE'}})
   }
+baseTranslateUrl = "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to="
+
+  translation(text:string, endLanguageCode:string):Observable<any>{
+    return this.http.post(this.baseTranslateUrl+endLanguageCode, [{text}], {headers: {'Content-Type':'application/json',
+    'Ocp-Apim-Subscription-Key': 'PUT_YOU_KEY_HERE', "Ocp-Apim-Subscription-Region":"eastus"}})
+  }
   constructor(private http:HttpClient) { }
 }
