@@ -1,11 +1,20 @@
 /*
+*
 {
-    display: flex;
-    margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
 }
 */
+
+h3
+{
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    color: white;
+}
 
 .form-field
 {
@@ -17,21 +26,30 @@
     justify-content: center;
 }
 
+.form-field__content
+{
+    display: flex;
+    border: solid;
+    border-style: inset;
+}
+
 button
 {
-    display: inline-block;
-    justify-content: center;
-    margin-top: 20px;
-    margin-right: 50px;
-    margin-left: 500px;
     background-color: #111827;
     color: white;
-    border: none;
+    border: solid;
+    border-style: ridge;
     border-radius: 5px;
     padding: 10px;
     width: 130px;
+    margin-right: 25px;
 }
 
+.form-actions
+{
+    display: flex;
+    justify-content: center;
+}
 
 /*
 form-field

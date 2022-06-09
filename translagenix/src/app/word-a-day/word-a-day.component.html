@@ -1,18 +1,20 @@
 <div class="form-field">
 	<label for="voice-control" class="form-field__label">
-		Voice:
+		<h3>Voice:</h3>
 	</label>
 	<div class="form-field__content">
 		<select id="voice-control" name="voice" [(ngModel)]="selectedVoice" class="form-field__control">
 			<option value="">- Select a voice -</option>
 			<option *ngFor="let voice of voices" [ngValue]="voice">
 				{{ voice.name }}
+
 				<!-- commented out unnecessary variables
-					
+
 				<ng-template [ngIf]="recommendedVoices[ voice.name ]">
 					&larr; Recommended
 				</ng-template>
 				-->
+
 			</option>
 		</select>
 
@@ -28,7 +30,7 @@
 
 <div class="form-field">
 	<label for="rate-control" class="form-field__label">
-		Speed:
+		<h3>Speed:</h3>
 	</label>
 	<div class="form-field__content">
 		<select id="rate-control" name="rate" [(ngModel)]="selectedRate" class="form-field__control">
@@ -45,7 +47,7 @@
 
 <div class="form-field">
 	<label for="text-control" class="form-field__label">
-		Text:
+		<h3>Text:</h3>
 	</label>
 	<div class="form-field__content">
 		<textarea id="text-control" name="text" [(ngModel)]="text" (input)="updateSayCommand()"
@@ -56,6 +58,7 @@
 			You can hit <code>CMD+Enter</code> to speak text.
 		</div>
 		-->
+
 	</div>
 </div>
 
