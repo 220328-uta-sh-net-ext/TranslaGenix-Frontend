@@ -19,9 +19,9 @@ export class LearningWordsComponent {
 	public rates: number[];
 	public selectedRate: number;
 	public selectedVoice: SpeechSynthesisVoice | null;
-	public text: string;
+	public text: string = "Translated Text";
 	public voices: SpeechSynthesisVoice[];
-
+	public randomWord: string;
 	// I initialize the app component.
 	constructor(private ngZone: NgZone, private nav: NavbarService) {
 
@@ -32,7 +32,7 @@ export class LearningWordsComponent {
 
 		// Bruce Leroy from The Last Dragon for the win!
 		// this.text value will need to be translated from random word
-		this.text = "The secret awaits eyes unclouded by ambition.  Those who are bound by desire see only that that which can be held in their hands.";
+		this.randomWord ="Hello How are you?";
 		this.sayCommand = "";
 
 		this.recommendedVoices = Object.create(null);
@@ -100,8 +100,8 @@ export class LearningWordsComponent {
 				() => {
 
 					this.voices = speechSynthesis.getVoices();
-					this.selectedVoice = (this.voices[0] || null);
-					this.updateSayCommand();
+					this.selectedVoice = this.selectedVoice??this.voices[0];
+					//this.updateSayCommand();
 
 				}
 			);
@@ -119,10 +119,11 @@ export class LearningWordsComponent {
 			return;
 
 		}
+		
 
 		this.stop();
 		this.synthesizeSpeechFromText(this.selectedVoice, this.selectedRate, this.text);
-
+		
 	}
 
 
@@ -134,6 +135,7 @@ export class LearningWordsComponent {
 			speechSynthesis.cancel();
 
 		}
+	//	this.selectedVoice =speechSynthesis.
 
 	}
 
@@ -158,6 +160,7 @@ export class LearningWordsComponent {
 			;
 
 		this.sayCommand = `say --voice ${this.selectedVoice.name} --rate ${sanitizedRate} --output-file=demo.aiff "${sanitizedText}"`;
+		
 
 	}
 
@@ -166,18 +169,19 @@ export class LearningWordsComponent {
 	// ---
 
 	// I perform the low-level speech synthesis for the given voice, rate, and text.
-	private synthesizeSpeechFromText(
+	private synthesizeSpeechFromText(	
 		voice: SpeechSynthesisVoice,
 		rate: number,
 		text: string
 	): void {
-
+	
 		var utterance = new SpeechSynthesisUtterance(text);
 		utterance.voice = this.selectedVoice;
 		utterance.rate = rate;
 
 		speechSynthesis.speak(utterance);
 
+		
 	}
 	[x: string]: any;
 
@@ -188,7 +192,7 @@ export class LearningWordsComponent {
 	voiceText: any;
 	public translatedText: String = "Translated Text"
 	recognizedLanguage: String = "en-US";
-	translatedLanguage: String = "en-US";
+	//translatedLanguage: String = this.recognizedLanguage;
 
 	initializeVoiceRecognitionCallback(): void {
 		annyang.addCallback('error', (err: any) => {
@@ -269,7 +273,7 @@ export class LearningWordsComponent {
 		// Add your location, also known as region. The default is global.
 		// This is required if using a Cognitive Services resource.
 		var location = "eastus";
-		this.translatedText = this.voiceText;
+	//	this.voiceText = this.randomWord;
 		axios({
 			baseURL: endpoint,
 			url: '/translate',
@@ -282,18 +286,18 @@ export class LearningWordsComponent {
 			},
 			params: {
 				'api-version': '3.0',
-				'from': this.recognizedLanguage,
-				'to': this.translatedLanguage,
+				'from': 'en-US',
+				'to': this.recognizedLanguage,
 				'includeSentenceLength': true
 			},
 			data: [{
-				'text': this.voiceText
+				'text': this.randomWord
 			}],
 			responseType: 'json'
 		}).then((response: any) => {
 			const text = JSON.parse(JSON.stringify(response.data, null,));
-			this.translatedText = text[0].translations[0].text
+			this.text = text[0].translations[0].text
 		})
-
+		
 	}
 }

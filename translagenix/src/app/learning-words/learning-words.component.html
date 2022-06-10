@@ -1,6 +1,6 @@
 <section class="to">
 	<h3>Translate To:</h3>
-	<select name="translatedLanguage" id="translateLanuage">
+	<select name="translatedLanguage" id="translateLanuage" [(ngModel)]="recognizedLanguage">
 		<option value="en-US">English (US)</option>
 		<option value="es-MX">Spanish (Mexico)</option>
 		<option value="af">Afrikaans</option>
@@ -67,7 +67,9 @@
 
 <div class="translate1">
 	<div class="translateFrom">
-
+		<h5 style="color:white;padding-left:5px;margin-top: 20px;">{{randomWord}}</h5>
+		<div class="transButton">
+		<button type="button" id="translateButton" (click)="translation()">Translate</button></div>
 	</div>
 	<div class="translateTo">
 
@@ -150,4 +152,8 @@
 		<button type="button" (click)="startVoiceRecognition()">Record</button>
 		<button type="button" button (click)="closeVoiceRecognition()">Close</button>
 	</div>
+</div>
+<div class="skipLearned">
+	<button type="button" class="buttonSkip" (click)="startVoiceRecognition()">Skip</button>
+	<button type="button" class="buttonLearned" (click)="closeVoiceRecognition()">Learned</button>
 </div>
