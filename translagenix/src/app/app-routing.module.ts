@@ -18,7 +18,7 @@ const routes:Routes = [
     canActivate: [OktaAuthGuard]
 },
 { path: 'profile', component: ProfileComponent, canActivate: [OktaAuthGuard] },
-{ path: 'login/callback', component: OktaCallbackComponent }
+//{ path: 'login/callback', component: OktaCallbackComponent }
 ]
 
 
