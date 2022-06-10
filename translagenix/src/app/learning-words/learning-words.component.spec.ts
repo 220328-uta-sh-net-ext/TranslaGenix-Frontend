@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WordADayComponent } from './word-a-day.component';
+import { LearningWordsComponent } from './learning-words.component';
 
-describe('WordADayComponent', () => {
-  let component: WordADayComponent;
-  let fixture: ComponentFixture<WordADayComponent>;
+describe('LearningWordsComponent', () => {
+  let component: LearningWordsComponent;
+  let fixture: ComponentFixture<LearningWordsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ WordADayComponent ]
+      declarations: [ LearningWordsComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WordADayComponent);
+    fixture = TestBed.createComponent(LearningWordsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -10,7 +10,7 @@ import { HttpClientModule} from '@angular/common/http';
 import { SpeechToTextComponent } from './speech-to-text/speech-to-text.component';
 import { LoginComponent } from './login/login.component';
 import { FileocrComponent } from './fileocr/fileocr.component';
-import { WordADayComponent } from './word-a-day/word-a-day.component';
+import { LearningWordsComponent } from './learning-words/learning-words.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import { WordADayComponent } from './word-a-day/word-a-day.component';
     SpeechToTextComponent,
     LoginComponent,
     FileocrComponent,
-    WordADayComponent
+    LearningWordsComponent
   ],
   imports: [
     BrowserModule,

@@ -7,11 +7,11 @@ interface RecommendedVoices {
 }
 
 @Component({
-  selector: 'app-word-a-day',
-  templateUrl: './word-a-day.component.html',
-  styleUrls: ['./word-a-day.component.css']
+  selector: 'app-learning-words',
+  templateUrl: './learning-words.component.html',
+  styleUrls: ['./learning-words.component.css']
 })
-export class WordADayComponent{
+export class LearningWordsComponent{
   public sayCommand: string;
 	public recommendedVoices: RecommendedVoices;
 	public rates: number[];
