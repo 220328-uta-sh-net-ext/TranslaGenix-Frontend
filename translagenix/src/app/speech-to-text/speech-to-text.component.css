@@ -20,22 +20,20 @@
 }
 */
 
-#language
-{
-    height: 40px;
-}
-#translateLanuage
-{
+#language {
     height: 40px;
 }
 
-.from
-{
-    margin-right:50px;
+#translateLanuage {
+    height: 40px;
+}
+
+.from {
+    margin-right: 50px;
 
 }
-h3
-{
+
+h3 {
     display: flex;
     justify-content: center;
     margin-top: 20px;
@@ -45,8 +43,7 @@ h3
     color: white;
 }
 
-select
-{
+select {
     display: flex;
     align-content: center;
     margin-left: auto;
@@ -55,15 +52,15 @@ select
 
 }
 
-button
-{
+button {
 
     justify-content: center;
     margin-top: 20px;
     margin-right: 50px;
     background-color: #111827;
     color: white;
-    border: none;
+    border: solid;
+
     border-radius: 5px;
     padding: 10px;
     width: 130px;
@@ -79,45 +76,44 @@ button
     margin-right: auto;  
 }
 */
-#translationDiv
-{
+#translationDiv {
     display: block;
     justify-content: center;
     align-content: center;
-    
+
 }
-#translateButton
-{
+
+#translateButton {
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
 }
-.startandclose
-{
+
+.startandclose {
 
     margin-top: 10px;
     margin-left: 50px;
 
 
 }
-.speechToText1
-{
+
+.speechToText1 {
     height: 200px;
     width: 1300px;
     background-color: #4D648D;
     display: flex;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: 25px;
     margin-left: auto;
     margin-right: auto;
     border: 3px;
     border-style: solid;
-    border-color: #111827;
+    border-color: #283655;
 }
-.recordandtranslation
-{
-    margin-top: 20px;
+
+.recordandtranslation {
+    margin-top: 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -131,17 +127,16 @@ button
     margin-right: auto;
     border: 3px;
     border-style: solid;
-    border-color: #111827;
+    border-color: #283655;
 }
-.listening
-{
+
+.listening {
 
     padding: 50px;
     color: #d0e1f9;
 }
 
-.textBox
-{
+.textBox {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -155,13 +150,13 @@ button
     text-align: center;
 
 }
-.translation
-{
 
-    
+.translation {
+
+
     color: #111827;
     background-color: white;
-    margin-top:70px;
+    margin-top: 70px;
     padding: 20px;
     width: 1000px;
     margin-left: auto;
@@ -173,14 +168,13 @@ button
 }
 
 
-.speechToText2
-{
+.speechToText2 {
     height: 300px;
     width: 1300px;
     background-color: #4D648D;
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 25px;
     margin-bottom: 50px;
     margin-left: auto;
     margin-right: auto;
