@@ -7,7 +7,7 @@ import { ThemeService } from './dark-theme.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app-theme.scss'],
 })
 export class AppComponent implements OnInit {
   title = 'translagenix';

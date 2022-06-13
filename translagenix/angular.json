@@ -26,7 +26,13 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/custom-theme.scss", "src/styles.css"],
+            "styles": [
+              {
+                "input": "src/app-theme.scss"
+              },
+              "src/custom-theme.scss",
+              "src/styles.css"
+            ],
             "scripts": ["src/app/speech-to-text/annyang.min.js"]
           },
           "configurations": {
