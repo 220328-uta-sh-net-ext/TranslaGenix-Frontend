@@ -1,4 +1,6 @@
 import { Component, NgZone } from '@angular/core';
+import { Observable } from 'rxjs';
+import { LearningWordsService } from '../learning-words.service';
 import { NavbarService } from '../navbar.service';
 
 declare const annyang: any;
@@ -23,7 +25,10 @@ export class LearningWordsComponent {
 	public voices: SpeechSynthesisVoice[];
 	public randomWord: string;
 	// I initialize the app component.
-	constructor(private ngZone: NgZone, private nav: NavbarService) {
+	wordRandom: Observable<any[]> = new Observable<any[]>();
+
+	constructor(private ngZone: NgZone, private nav: NavbarService, private word:LearningWordsService
+		) {
 
 		this.voices = [];
 		this.rates = [.25, .5, .75, 1, 1.25, 1.5, 1.75, 2];
@@ -32,7 +37,7 @@ export class LearningWordsComponent {
 
 		// Bruce Leroy from The Last Dragon for the win!
 		// this.text value will need to be translated from random word
-		this.randomWord ="Hello How are you?";
+		this.randomWord = "Hello How are you?";
 		this.sayCommand = "";
 
 		this.recommendedVoices = Object.create(null);
@@ -83,13 +88,30 @@ export class LearningWordsComponent {
 	  }
   */
 
+	public getRandomWords() {
+		this.word.getRandomWord();
+		this.wordRandom = this.word.subject;
+		this.wordRandom.forEach(element => {
+		
+			this.randomWord = Array.from(Object.values(element))[1];
+		});
+
+	}
+
+	public async learnedWord()
+	{
+		await this.getRandomWords();
+	
+	}
+
 	// I get called once after the inputs have been bound for the first time.
 	public ngOnInit(): void {
 		this.nav.show();
 		this.voices = speechSynthesis.getVoices();
 		this.selectedVoice = (this.voices[0] || null);
-		this.updateSayCommand();
-
+		// this.updateSayCommand();
+		this.getRandomWords();
+		
 		// The voices aren't immediately available (or so it seems). As such, if no
 		// voices came back, let's assume they haven't loaded yet and we need to wait for
 		// the "voiceschanged" event to fire before we can access them.
@@ -100,7 +122,7 @@ export class LearningWordsComponent {
 				() => {
 
 					this.voices = speechSynthesis.getVoices();
-					this.selectedVoice = this.selectedVoice??this.voices[0];
+					this.selectedVoice = this.selectedVoice ?? this.voices[0];
 					//this.updateSayCommand();
 
 				}
@@ -119,11 +141,11 @@ export class LearningWordsComponent {
 			return;
 
 		}
-		
+
 
 		this.stop();
 		this.synthesizeSpeechFromText(this.selectedVoice, this.selectedRate, this.text);
-		
+
 	}
 
 
@@ -135,7 +157,7 @@ export class LearningWordsComponent {
 			speechSynthesis.cancel();
 
 		}
-	//	this.selectedVoice =speechSynthesis.
+		//	this.selectedVoice =speechSynthesis.
 
 	}
 
@@ -160,7 +182,7 @@ export class LearningWordsComponent {
 			;
 
 		this.sayCommand = `say --voice ${this.selectedVoice.name} --rate ${sanitizedRate} --output-file=demo.aiff "${sanitizedText}"`;
-		
+
 
 	}
 
@@ -169,19 +191,19 @@ export class LearningWordsComponent {
 	// ---
 
 	// I perform the low-level speech synthesis for the given voice, rate, and text.
-	private synthesizeSpeechFromText(	
+	private synthesizeSpeechFromText(
 		voice: SpeechSynthesisVoice,
 		rate: number,
 		text: string
 	): void {
-	
+
 		var utterance = new SpeechSynthesisUtterance(text);
 		utterance.voice = this.selectedVoice;
 		utterance.rate = rate;
 
 		speechSynthesis.speak(utterance);
 
-		
+
 	}
 	[x: string]: any;
 
@@ -190,7 +212,7 @@ export class LearningWordsComponent {
 	voiceActiveSectionSuccess: boolean = false;
 	voiceActiveSectionListening: boolean = false;
 	voiceText: any;
-	public translatedText: String = "Translated Text"
+	public translatedText: String = "Translated Text";
 	recognizedLanguage: String = "en-US";
 	//translatedLanguage: String = this.recognizedLanguage;
 
@@ -273,7 +295,7 @@ export class LearningWordsComponent {
 		// Add your location, also known as region. The default is global.
 		// This is required if using a Cognitive Services resource.
 		var location = "eastus";
-	//	this.voiceText = this.randomWord;
+		//	this.voiceText = this.randomWord;
 		axios({
 			baseURL: endpoint,
 			url: '/translate',
@@ -298,6 +320,6 @@ export class LearningWordsComponent {
 			const text = JSON.parse(JSON.stringify(response.data, null,));
 			this.text = text[0].translations[0].text
 		})
-		
+
 	}
 }
