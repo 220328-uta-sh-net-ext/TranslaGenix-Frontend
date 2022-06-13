@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { FileocrComponent } from './fileocr/fileocr.component';
 import { LeaderBoardComponent } from './leader-board/leader-board.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ThemeService } from './dark-theme.service';
 
 
 
@@ -35,7 +36,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [ThemeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
