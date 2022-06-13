@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-//import { Service } from 'rxjs';
+import { Subject} from 'rxjs';
 import { ThemeService } from './dark-theme.service';
 
 
@@ -14,11 +14,13 @@ export class AppComponent implements OnInit {
 
   isDarkTheme!: Observable<boolean>;
 
-  toggleDarkTheme(checked: boolean) {
+  toggleDarkTheme(checked: boolean, disabled: boolean) {
     this.themeService.setDarkTheme(checked);
+    this.themeService.setDarkTheme(disabled);
   }
 
   constructor(private themeService: ThemeService) {}
+   //toggle() { this.isDarkTheme = !this.isDarkTheme; }
 
   ngOnInit() {
     this.isDarkTheme = this.themeService.isDarkTheme;
