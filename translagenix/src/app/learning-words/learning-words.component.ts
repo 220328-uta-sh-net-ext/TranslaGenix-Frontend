@@ -24,7 +24,6 @@ export class LearningWordsComponent {
 	public text: string = "Translated Text";
 	public voices: SpeechSynthesisVoice[];
 	public randomWord: string;
-	// I initialize the app component.
 	wordRandom: Observable<any[]> = new Observable<any[]>();
 
 	constructor(private ngZone: NgZone, private nav: NavbarService, private word:LearningWordsService
@@ -35,58 +34,11 @@ export class LearningWordsComponent {
 		this.selectedVoice = null;
 		this.selectedRate = 1;
 
-		// Bruce Leroy from The Last Dragon for the win!
-		// this.text value will need to be translated from random word
-		this.randomWord = "Hello How are you?";
+		this.randomWord = "";
 		this.sayCommand = "";
 
 		this.recommendedVoices = Object.create(null);
-
-		/*  commented out.  none of these voices work for our component
-
-		this.recommendedVoices[ "Alex" ] = true;
-		this.recommendedVoices[ "Alva" ] = true;
-		this.recommendedVoices[ "Damayanti" ] = true;
-		this.recommendedVoices[ "Daniel" ] = true;
-		this.recommendedVoices[ "Fiona" ] = true;
-		this.recommendedVoices[ "Fred" ] = true;
-		this.recommendedVoices[ "Karen" ] = true;
-		this.recommendedVoices[ "Mei-Jia" ] = true;
-		this.recommendedVoices[ "Melina" ] = true;
-		this.recommendedVoices[ "Moira" ] = true;
-		this.recommendedVoices[ "Rishi" ] = true;
-		this.recommendedVoices[ "Samantha" ] = true;
-		this.recommendedVoices[ "Tessa" ] = true;
-		this.recommendedVoices[ "Veena" ] = true;
-		this.recommendedVoices[ "Victoria" ] = true;
-		this.recommendedVoices[ "Yuri" ] = true;
-		*/
 	}
-
-	// ---
-	// PUBLIC METHODS.
-	// ---
-
-	// I demo the currently-selected voice.
-
-	/*  commented out unnecessary default statement
-  
-	  public demoSelectedVoice() : void {
-  
-		  if ( ! this.selectedVoice ) {
-  
-			  console.warn( "Expected a voice, but none was selected." );
-			  return;
-  
-		  }
-  
-		  var demoText = "Best wishes and warmest regards.";
-  
-		  this.stop();
-		  this.synthesizeSpeechFromText( this.selectedVoice, this.selectedRate, demoText );
-  
-	  }
-  */
 
 	public getRandomWords() {
 		this.word.getRandomWord();
@@ -104,17 +56,13 @@ export class LearningWordsComponent {
 	
 	}
 
-	// I get called once after the inputs have been bound for the first time.
+
 	public ngOnInit(): void {
 		this.nav.show();
 		this.voices = speechSynthesis.getVoices();
 		this.selectedVoice = (this.voices[0] || null);
-		// this.updateSayCommand();
 		this.getRandomWords();
 		
-		// The voices aren't immediately available (or so it seems). As such, if no
-		// voices came back, let's assume they haven't loaded yet and we need to wait for
-		// the "voiceschanged" event to fire before we can access them.
 		if (!this.voices.length) {
 
 			speechSynthesis.addEventListener(
@@ -123,7 +71,6 @@ export class LearningWordsComponent {
 
 					this.voices = speechSynthesis.getVoices();
 					this.selectedVoice = this.selectedVoice ?? this.voices[0];
-					//this.updateSayCommand();
 
 				}
 			);
@@ -132,8 +79,6 @@ export class LearningWordsComponent {
 
 	}
 
-
-	// I synthesize speech from the current text for the currently-selected voice.
 	public speak(): void {
 
 		if (!this.selectedVoice || !this.text) {
@@ -148,8 +93,6 @@ export class LearningWordsComponent {
 
 	}
 
-
-	// I stop any current speech synthesis.
 	public stop(): void {
 
 		if (speechSynthesis.speaking) {
@@ -157,13 +100,10 @@ export class LearningWordsComponent {
 			speechSynthesis.cancel();
 
 		}
-		//	this.selectedVoice =speechSynthesis.
+
 
 	}
 
-
-	// I update the "say" command that can be used to generate the a sound file from the
-	// current speech synthesis configuration.
 	public updateSayCommand(): void {
 
 		if (!this.selectedVoice || !this.text) {
@@ -172,9 +112,6 @@ export class LearningWordsComponent {
 
 		}
 
-		// With the say command, the rate is the number of words-per-minute. As such, we
-		// have to finagle the SpeechSynthesis rate into something roughly equivalent for
-		// the terminal-based invocation.
 		var sanitizedRate = Math.floor(200 * this.selectedRate);
 		var sanitizedText = this.text
 			.replace(/[\r\n]/g, " ")
@@ -186,11 +123,6 @@ export class LearningWordsComponent {
 
 	}
 
-	// ---
-	// PRIVATE METHODS.
-	// ---
-
-	// I perform the low-level speech synthesis for the given voice, rate, and text.
 	private synthesizeSpeechFromText(
 		voice: SpeechSynthesisVoice,
 		rate: number,
@@ -214,7 +146,6 @@ export class LearningWordsComponent {
 	voiceText: any;
 	public translatedText: String = "Translated Text";
 	recognizedLanguage: String = "en-US";
-	//translatedLanguage: String = this.recognizedLanguage;
 
 	initializeVoiceRecognitionCallback(): void {
 		annyang.addCallback('error', (err: any) => {
@@ -291,11 +222,8 @@ export class LearningWordsComponent {
 
 		var key = "62a3f7d0558e430c868a53b732787e01";
 		var endpoint = "https://api.cognitive.microsofttranslator.com";
-
-		// Add your location, also known as region. The default is global.
-		// This is required if using a Cognitive Services resource.
 		var location = "eastus";
-		//	this.voiceText = this.randomWord;
+
 		axios({
 			baseURL: endpoint,
 			url: '/translate',
