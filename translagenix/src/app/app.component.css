@@ -1,0 +1,26 @@
+:root {
+    height: 100%;
+    --bg: #FAFAFA;
+    --bg-panel: rgba(255, 255, 255, 1);
+    --primary: #2ba671;
+    --accent: rgba(184, 245, 248, 1);
+    --color-text-grey: #707070;
+    --color-text-black: #FFFFFF;
+    --triangle: transparent linear-gradient(51deg, #E9EDF8 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
+    --graph:  rgba(223, 226, 234, 1);
+    --graph-border: 1px solid rgba(223, 226, 234, 1);
+}
+
+:root .dark-theme {
+    height: 100%;
+    --bg: #303030;
+    --bg-panel: #3A3A3A;
+    --primary: #2ba671;
+    --accent: rgba(184, 245, 248, 1);
+    --color-text-grey: #707070;
+    --color-text-black: #E1E1E1;
+    --triangle: transparent linear-gradient(52deg, #030303 0%, #2D2D2D 36%, #373737 52%, #555555 69%, #707070 92%, #FEFEFE 100%) 0% 0% no-repeat padding-box;
+    --graph: #3A3A3A;
+    --graph-border: 1px solid #707070;
+  }
+  
