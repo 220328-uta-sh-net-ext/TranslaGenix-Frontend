@@ -67,14 +67,15 @@
 
 <div class="translate1">
 	<div class="translateFrom">
-		<h5 style="color:white;padding-left:5px;margin-top: 20px;">{{randomWord}}</h5>
+		<span style="font-size: 20pt;color:white;padding-left:5px;margin-top: 40px;">New Phrases To Learn: </span>
+		<span style="font-size: 20pt;color:white;padding-left:5px;margin-top: 40px;"><b>{{randomWord}} </b></span>
 		<div class="transButton">
 		<button type="button" id="translateButton" (click)="translation()">Translate</button></div>
 	</div>
 	<div class="translateTo">
 
-		<h5 style="color:white;padding-left:5px;margin-top: 20px;">{{text}}</h5>
-
+		<span style="font-size: 20pt;color:white;padding-left:5px;margin-top: 40px;"><b>{{text}} </b></span>
+		<div></div>
 		<div class="voice">
 			<label for="voice-control" class="form-field__label">
 				<h6 style="color:white; padding-right:5px">Voice :</h6>
@@ -121,7 +122,9 @@
 
 
 <div class="translate2">
+	<span style="font-size: 20pt;color:white;padding-left:5px;"><b>Try It On Your Own</b></span>
 	<div class="textBox">
+		
 		<ng-container *ngIf="!voiceActiveSectionError; else failure">
 
 			<ng-container *ngIf="voiceText; else start">
