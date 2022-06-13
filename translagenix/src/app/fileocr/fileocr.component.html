@@ -1,9 +1,89 @@
-  <div class="text-center">
-	<input class="form-control" type="file"
-			(change)="onChange($event)">
+<div class="text-center">
+  <input class="form-control" type="file" (change)="onChange($event)" />
+  <br />
+  <img
+    class="preview"
+    src="{{ this.imageSrc }}"
+    alt="no preview"
+    height="200px"
+  />
+  <br />
+  <br />
 
-	<button (click)="onUpload()"
-		class="btn btn-success">
-		Upload
-	</button>
+  <button class="btn btn-success" name="loading" (click)="onUpload()">
+    Upload
+  </button>
+
+  <button (click)="printResponse()" class="btn btn-success">Text</button>
+
+  <br />
+  <br />
+
+  <textarea id="image-text-card">
+	   {{ allText }}
+	 </textarea>
+
+  <br />
+  <br />
+  <br />
+  <form class="fileocr" (ngSubmit)="onUrl()">
+    <div class="input-div">
+      <label for="image-url">Image url:</label>
+      <input
+        id="image-url"
+        name="image-url"
+        type="text"
+        required
+        [(ngModel)]="url"
+      />
+      <br />
+      <br />
+      <img
+        class="preview"
+        alt="no preview"
+        src="{{ this.url }}"
+        height="200px"
+      />
+      <br />
+      <br />
+    </div>
+  </form>
+  <button (click)="onUrl()" class="btn btn-success">URL</button>
+  <br />
+  <br />
+  <form class="translation" (ngSubmit)="translate()">
+    <div class="input-div">
+      <label for="text"> Text:</label>
+      <input id="text" name="text" type="text" required [(ngModel)]="text" />
+    </div>
+
+	<br/>
+    <div class="input-div">
+      <label for="language"> Translate to:</label>
+      <select name="language" id="language" [(ngModel)]="endLanguageCode">
+        <option value="en">English</option>
+        <option value="uk">Ukrainian</option>
+        <option value="pl">Polish</option>
+        <option value="hi">Hindi</option>
+        <option value="gu">Gujarati</option>
+        <option value="ar">Arabic</option>
+      </select>
+    </div>
+	<br/>
+    <button
+      id="translate-button"
+      class="btn btn-success"
+      type="submit"
+      value="translation"
+    >
+      TRANSLATE
+    </button>
+    <br />
+    <br />
+    <textarea id="translation-card">
+ {{ this.translatedText }}
+	</textarea
+    >
+    <!-- <p>{{this.translationService.text}}</p> -->
+  </form>
 </div>
