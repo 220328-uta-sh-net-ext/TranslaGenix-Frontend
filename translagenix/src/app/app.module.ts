@@ -10,9 +10,10 @@ import { HttpClientModule} from '@angular/common/http';
 import { SpeechToTextComponent } from './speech-to-text/speech-to-text.component';
 import { LoginComponent } from './login/login.component';
 import { FileocrComponent } from './fileocr/fileocr.component';
+
+import { LearningWordsComponent } from './learning-words/learning-words.component';
+
 import { LeaderBoardComponent } from './leader-board/leader-board.component';
-
-
 
 @NgModule({
   declarations: [
@@ -22,8 +23,9 @@ import { LeaderBoardComponent } from './leader-board/leader-board.component';
     SpeechToTextComponent,
     LoginComponent,
     FileocrComponent,
+    LearningWordsComponent
     LeaderBoardComponent,
- 
+
   ],
   imports: [
     BrowserModule,
