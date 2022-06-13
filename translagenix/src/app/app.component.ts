@@ -12,17 +12,19 @@ import { ThemeService } from './dark-theme.service';
 export class AppComponent implements OnInit {
   title = 'translagenix';
 
-  isDarkTheme!: Observable<boolean>;
+  isDarkTheme: Observable<boolean> | undefined;
 
-  toggleDarkTheme(checked: boolean, disabled: boolean) {
-    this.themeService.setDarkTheme(checked);
-    this.themeService.setDarkTheme(disabled);
+  constructor(private themeService: ThemeService) {
+    
   }
-
-  constructor(private themeService: ThemeService) {}
    //toggle() { this.isDarkTheme = !this.isDarkTheme; }
 
   ngOnInit() {
-    this.isDarkTheme = this.themeService.isDarkTheme;
+    this.isDarkTheme != this.themeService.isDarkTheme;
+  } 
+  
+  toggleDarkTheme(checked: boolean) {
+    this.themeService.setDarkTheme(checked);
+    console.log("triggered");
   }
 }
