@@ -21,13 +21,14 @@ import { LearningWordsComponent } from './learning-words/learning-words.componen
 import { LeaderBoardComponent } from './leader-board/leader-board.component';
 
 const oktaAuth = new OktaAuth({
-  issuer: '',
-  clientId: '',
+  issuer: 'https://dev-32904001.okta.com/oauth2/default',
+  clientId: '0oa5dvww6xrv9XvgF5d7',
   // redirectUri: window.location.origin + '/login/callback'
   //create new app on octa side once we deployed(or in production)
-  redirectUri: '',
+  redirectUri: 'https://translagenix-frontend.azurewebsites.net/login/callback',
   pkce:true,
 });
+
 
 @NgModule({
   declarations: [
@@ -40,7 +41,6 @@ const oktaAuth = new OktaAuth({
     ProfileComponent,
     LearningWordsComponent,
     LeaderBoardComponent,
-
 
   ],
   imports: [
