@@ -19,6 +19,7 @@ import { AuthInterceptor } from './auth.interceptor';
 import { LearningWordsComponent } from './learning-words/learning-words.component';
 
 import { LeaderBoardComponent } from './leader-board/leader-board.component';
+import { ThemeService } from './theme.service';
 
 const oktaAuth = new OktaAuth({
   issuer: '',
@@ -48,9 +49,10 @@ const oktaAuth = new OktaAuth({
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    OktaAuthModule
+    OktaAuthModule,
   ],
   providers: [
+    ThemeService,
     { provide: OKTA_CONFIG, useValue: { oktaAuth } },
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
   ],

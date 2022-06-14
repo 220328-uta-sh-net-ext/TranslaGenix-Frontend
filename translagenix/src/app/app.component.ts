@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { OktaAuthStateService, OKTA_AUTH } from '@okta/okta-angular';
 import { AuthState, OktaAuth } from '@okta/okta-auth-js';
 import { filter, map, Observable } from 'rxjs';
+import { ThemeService } from './theme.service';
 
 @Component({
   selector: 'app-root',
@@ -12,11 +13,23 @@ import { filter, map, Observable } from 'rxjs';
 })
 export class AppComponent implements OnInit{
   title = 'website';
-
+  isDarkTheme: Observable<boolean> | undefined;
 public isAuthenticated$!: Observable<boolean>;
 
-  constructor(private _router: Router, private _oktaStateService: OktaAuthStateService, @Inject(OKTA_AUTH) private _oktaAuth: OktaAuth) { }
-
+  constructor(
+    private _router: Router,
+    private _oktaStateService: OktaAuthStateService,
+    @Inject(OKTA_AUTH) private _oktaAuth: OktaAuth,
+    private themeService: ThemeService) { }
+    
+  toggleDarkTheme(checked: boolean){
+    if(!this.isDarkTheme){
+        this.themeService.setDarkTheme(checked)
+    }
+    else{
+        this.themeService.setDarkTheme(!checked)
+    }
+  }
   public ngOnInit(): void {
     this.isAuthenticated$ = this._oktaStateService.authState$.pipe(
       filter((s: AuthState) => !!s),

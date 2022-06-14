@@ -1,4 +1,8 @@
 <navbar></navbar>
+<mat-slide-toggle
+ [checked]="isDarkTheme | async"
+  (change)="toggleDarkTheme($event.checked)">Dark theme
+</mat-slide-toggle>
 <router-outlet>
     <ng-container *ngIf="(isAuthenticated$ | async) === false">
         <button (click)="signIn()"> Sign in </button>
