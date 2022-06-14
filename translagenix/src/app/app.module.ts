@@ -37,8 +37,8 @@ const oktaAuth = new OktaAuth({
     SpeechToTextComponent,
     LoginComponent,
     FileocrComponent,
-    ProfileComponent
-    LearningWordsComponent
+    ProfileComponent,
+    LearningWordsComponent,
     LeaderBoardComponent,
 
 
