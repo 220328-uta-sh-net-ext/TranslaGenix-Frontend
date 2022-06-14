@@ -32,6 +32,7 @@ public isAuthenticated$!: Observable<boolean>;
     }
   }
   public ngOnInit(): void {
+    this.isDarkTheme!= this.themeService.isDarkTheme;
     this.isAuthenticated$ = this._oktaStateService.authState$.pipe(
       filter((s: AuthState) => !!s),
       map((s: AuthState) => s.isAuthenticated ?? false)
