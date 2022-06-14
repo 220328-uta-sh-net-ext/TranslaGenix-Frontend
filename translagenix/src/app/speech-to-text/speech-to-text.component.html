@@ -135,11 +135,13 @@
   </section>
 </div>
 <div class="recordandtranslation">
-  <div class = "textBox">
+  <div class="textBox">
     <ng-container *ngIf="!voiceActiveSectionError; else failure">
 
       <ng-container *ngIf="voiceText; else start">
-        <span><h4>{{voiceText}}</h4></span>
+        <span>
+          <h4>{{voiceText}}</h4>
+        </span>
       </ng-container>
 
       <ng-template #start>
@@ -160,24 +162,26 @@
       <span>Didn't catch that</span>
     </ng-template>
   </div>
-  <div class = "startandclose">
+  <div class="startandclose">
     <button type="button" (click)="startVoiceRecognition()">Record</button>
-  <button type="button" button (click)="closeVoiceRecognition()">Close</button>
+    <button type="button" button (click)="closeVoiceRecognition()">Close</button>
   </div>
-      
+
 </div>
 
 
 <div class="speechToText2">
-<div *ngIf="voiceActiveSectionDisabled; else voicesection;">
-</div>
+  <div *ngIf="voiceActiveSectionDisabled; else voicesection;">
+  </div>
 
-<div id = "translationDiv">
-  
-  <div class = "translation"><h4>{{translatedText}}</h4></div>
-  <button type="button" id="translateButton" (click)="translation()">Translate</button>
- 
-</div>
+  <div id="translationDiv">
+
+    <div class="translation">
+      <h4>{{translatedText}}</h4>
+    </div>
+    <button type="button" id="translateButton" (click)="translation()">Translate</button>
+
+  </div>
 
 
 

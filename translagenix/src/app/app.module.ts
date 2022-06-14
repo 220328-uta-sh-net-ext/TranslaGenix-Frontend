@@ -10,13 +10,15 @@ import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { SpeechToTextComponent } from './speech-to-text/speech-to-text.component';
 import { LoginComponent } from './login/login.component';
 import { FileocrComponent } from './fileocr/fileocr.component';
-
-
 import { OktaAuthModule, OKTA_CONFIG } from '@okta/okta-angular';
 import { OktaAuth } from '@okta/okta-auth-js';
 import { ProfileComponent } from './profile/profile.component';
 
 import { AuthInterceptor } from './auth.interceptor';
+
+import { LearningWordsComponent } from './learning-words/learning-words.component';
+
+import { LeaderBoardComponent } from './leader-board/leader-board.component';
 
 const oktaAuth = new OktaAuth({
   issuer: '',
@@ -36,6 +38,10 @@ const oktaAuth = new OktaAuth({
     LoginComponent,
     FileocrComponent,
     ProfileComponent
+    LearningWordsComponent
+    LeaderBoardComponent,
+
+
   ],
   imports: [
     BrowserModule,

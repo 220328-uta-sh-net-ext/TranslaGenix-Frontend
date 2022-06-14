@@ -1,14 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from "@angular/common";
 import { RouterModule, Routes } from '@angular/router';
+import { FileocrComponent } from './fileocr/fileocr.component';
 import { HomeComponent } from './home/home.component';
+import { LeaderBoardComponent } from './leader-board/leader-board.component';
 import { SpeechToTextComponent } from './speech-to-text/speech-to-text.component';
+
 import { OktaAuthGuard,  OktaCallbackComponent } from '@okta/okta-angular';
 import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
 
 const routes:Routes = [
-   //{path: '', redirectTo : '/login', pathMatch:'full'},
+  
   {path: 'home', component: HomeComponent, canActivate: [OktaAuthGuard]},
   {path: 'login', component: LoginComponent},
   {path: 'SpeechToText', component: SpeechToTextComponent}, 
@@ -19,6 +22,7 @@ const routes:Routes = [
 },
 { path: 'profile', component: ProfileComponent, canActivate: [OktaAuthGuard] },
 { path: 'login/callback', component: OktaCallbackComponent }
+
 ]
 
 
