@@ -1,10 +1,19 @@
 <navbar></navbar>
+
+
 <router-outlet>
     <ng-container *ngIf="(isAuthenticated$ | async) === false">
+        <body> 
+            <h1 class="title-card"> Welcome to TranslaGenix
+                <h2>Making connections through translations</h2>
+            </h1> 
+        <form>
         <button (click)="signIn()"> Sign in </button>
+        </form>    
+        </body>
+
+        <footer>
+            <h2>©️ TranslaGenix 2022</h2>
+        </footer>              
     </ng-container> 
 </router-outlet>
-
-
-
-
