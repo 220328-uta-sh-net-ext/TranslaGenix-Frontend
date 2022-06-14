@@ -17,7 +17,7 @@ body {
 	
 
 }
-th {
+th, h1 {
 	color: white;
 }
 .table thead tr th,
