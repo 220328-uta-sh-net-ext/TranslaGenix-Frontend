@@ -22,12 +22,13 @@ import { LeaderBoardComponent } from './leader-board/leader-board.component';
 
 const oktaAuth = new OktaAuth({
   issuer: 'https://dev-32904001.okta.com/oauth2/default',
-  clientId: '0oa5dvww6xrv9XvgF5d7',
+  clientId: '0oa5blk56g7GvMBNN5d7',
   // redirectUri: window.location.origin + '/login/callback'
   //create new app on octa side once we deployed(or in production)
-  redirectUri: 'https://translagenix-frontend.azurewebsites.net/login/callback',
+  redirectUri: 'http://localhost:4200/login/callback',
   pkce:true,
 });
+
 
 
 @NgModule({
