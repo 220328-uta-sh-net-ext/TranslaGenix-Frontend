@@ -9,12 +9,14 @@ import { SpeechToTextComponent } from './speech-to-text/speech-to-text.component
 import { OktaAuthGuard,  OktaCallbackComponent } from '@okta/okta-angular';
 import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
+import { LearningWordsComponent } from './learning-words/learning-words.component';
 
 const routes:Routes = [
   
   {path: 'home', component: HomeComponent, canActivate: [OktaAuthGuard]},
   {path: 'login', component: LoginComponent},
   {path: 'SpeechToText', component: SpeechToTextComponent}, 
+  {path: 'LearningWords', component: LearningWordsComponent}, 
   {
     path: 'protected',
     loadChildren: () => import('./protected.module').then(m => m.ProtectedModule),
