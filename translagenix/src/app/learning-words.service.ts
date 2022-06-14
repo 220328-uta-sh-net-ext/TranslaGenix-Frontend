@@ -30,4 +30,18 @@ export class LearningWordsService {
       this.subject.next(this.Word);
     })
   }
+
+  addPointstoUser(userID: string): void{
+    
+    this.http.put("https://translagenix.azurewebsites.net/api/Points/IncreasePointsById?id=" +userID, {})
+    .pipe(
+      catchError((e) => {
+        return throwError(e)
+      }),
+      )
+      .subscribe((data) =>{
+        console.log(data);
+       
+      })
+  }
 }

@@ -50,9 +50,18 @@ export class LearningWordsComponent {
 
 	}
 
+	userID: any = "";
+	public addPointstoUser() {
+		this.userID = localStorage.getItem("userId")?.toString();
+		console.log(this.userID);
+		this.word.addPointstoUser(this.userID);
+	}
+
 	public async learnedWord()
 	{
+		
 		await this.getRandomWords();
+		this.addPointstoUser();
 	
 	}
 
