@@ -8,8 +8,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
 
 const routes:Routes = [
-   {path: '', redirectTo : '/login', pathMatch:'full'},
-  {path: 'home', component: HomeComponent},
+   //{path: '', redirectTo : '/login', pathMatch:'full'},
+  {path: 'home', component: HomeComponent, canActivate: [OktaAuthGuard]},
   {path: 'login', component: LoginComponent},
   {path: 'SpeechToText', component: SpeechToTextComponent}, 
   {
@@ -18,7 +18,7 @@ const routes:Routes = [
     canActivate: [OktaAuthGuard]
 },
 { path: 'profile', component: ProfileComponent, canActivate: [OktaAuthGuard] },
-//{ path: 'login/callback', component: OktaCallbackComponent }
+{ path: 'login/callback', component: OktaCallbackComponent }
 ]
 
 

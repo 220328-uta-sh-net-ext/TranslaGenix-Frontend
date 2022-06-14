@@ -19,11 +19,12 @@ import { ProfileComponent } from './profile/profile.component';
 import { AuthInterceptor } from './auth.interceptor';
 
 const oktaAuth = new OktaAuth({
-  issuer: 'https://dev-32904001.okta.com/oauth2/default',
-  clientId: '0oa5ckaxxjlIL6ENd5d7',
+  issuer: '',
+  clientId: '',
   // redirectUri: window.location.origin + '/login/callback'
   //create new app on octa side once we deployed(or in production)
-  redirectUri: 'https://translagenix-frontend.azurewebsites.net/home'
+  redirectUri: '',
+  pkce:true,
 });
 
 @NgModule({

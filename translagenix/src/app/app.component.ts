@@ -26,8 +26,9 @@ public isAuthenticated$!: Observable<boolean>;
 
   public async signIn() : Promise<void> {
     await this._oktaAuth.signInWithRedirect().then(
-      _ => this._router.navigate(['/profile'])
+      _ => this._router.navigate(['/home'])
     );
+    
   }
 
   public async signOut(): Promise<void> {

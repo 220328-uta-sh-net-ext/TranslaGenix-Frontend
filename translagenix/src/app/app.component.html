@@ -1,11 +1,11 @@
 <navbar></navbar>
 <!--<app-fileocr></app-fileocr> -->
 <router-outlet>
-    <!-- <ng-container *ngIf="(isAuthenticated$ | async) === false; else signout">
+    <ng-container *ngIf="(isAuthenticated$ | async) === false">
         <button (click)="signIn()"> Sign in </button>
-    </ng-container>
-    <app-profile></app-profile>
+    </ng-container> 
+    <!-- <app-profile></app-profile>
     <ng-template #signout>
-        <button (click)="signOut()">Sign out</button> -->
-    <!-- </ng-template> -->
+        <button (click)="signOut()">Sign out</button> 
+   </ng-template> -->
 </router-outlet>

@@ -19,4 +19,9 @@
         
       </ul>
     </div>
+    <div style="position:absolute;right : 20px;top: 30px;color:white;">
+    <p *ngIf="name$ | async as name">
+      Hello {{name}}
+  </p>
+  </div>
   </nav>
