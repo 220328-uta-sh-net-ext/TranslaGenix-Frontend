@@ -10,6 +10,7 @@ import { OktaAuthGuard,  OktaCallbackComponent } from '@okta/okta-angular';
 import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
 
+
 const routes:Routes = [
   
   {path: 'home', component: HomeComponent, canActivate: [OktaAuthGuard]},
@@ -21,7 +22,7 @@ const routes:Routes = [
 
 
 
-  {
+ {
     path: 'protected',
     loadChildren: () => import('./protected.module').then(m => m.ProtectedModule),
     canActivate: [OktaAuthGuard]
