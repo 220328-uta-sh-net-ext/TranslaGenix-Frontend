@@ -17,7 +17,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { AuthInterceptor } from './auth.interceptor';
 
 import { LearningWordsComponent } from './learning-words/learning-words.component';
-
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { LeaderBoardComponent } from './leader-board/leader-board.component';
 import { ThemeService } from './theme.service';
 
@@ -50,6 +51,8 @@ const oktaAuth = new OktaAuth({
     FormsModule,
     HttpClientModule,
     OktaAuthModule,
+    MatSlideToggleModule,
+    MatToolbarModule,
   ],
   providers: [
     ThemeService,
