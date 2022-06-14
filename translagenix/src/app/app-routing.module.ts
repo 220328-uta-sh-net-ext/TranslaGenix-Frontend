@@ -20,6 +20,7 @@ const routes:Routes = [
   {path: 'LeaderBoard', component: LeaderBoardComponent},
 
 
+
   {
     path: 'protected',
     loadChildren: () => import('./protected.module').then(m => m.ProtectedModule),

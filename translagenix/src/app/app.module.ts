@@ -22,13 +22,14 @@ import { LeaderBoardComponent } from './leader-board/leader-board.component';
 import { ThemeService } from './theme.service';
 
 const oktaAuth = new OktaAuth({
-  issuer: '',
-  clientId: '',
+  issuer: 'https://dev-32904001.okta.com/oauth2/default',
+  clientId: '0oa5blk56g7GvMBNN5d7',
   // redirectUri: window.location.origin + '/login/callback'
   //create new app on octa side once we deployed(or in production)
-  redirectUri: '',
+  redirectUri: 'http://localhost:4200/login/callback',
   pkce:true,
 });
+
 
 @NgModule({
   declarations: [
@@ -41,7 +42,6 @@ const oktaAuth = new OktaAuth({
     ProfileComponent,
     LearningWordsComponent,
     LeaderBoardComponent,
-
 
   ],
   imports: [
