@@ -1,4 +1,6 @@
 <navbar></navbar>
+
+
 <router-outlet>
     <ng-container *ngIf="(isAuthenticated$ | async) === false">
         <body> 
@@ -15,7 +17,3 @@
         </footer>              
     </ng-container> 
 </router-outlet>
-
-
-
-

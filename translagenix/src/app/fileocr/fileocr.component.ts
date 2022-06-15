@@ -26,7 +26,7 @@ export class FileocrComponent implements OnInit {
   error: boolean = false;
   response: any;
   text:string = "";
-  endLanguageCode:string = "";
+  endLanguageCode:string = "en";
   translatedText:string = "";
 /*   regions: any;
   lines: any;
@@ -66,7 +66,7 @@ export class FileocrComponent implements OnInit {
     return this.response;
   }
   translate():void{
-    this.fileocrService.translation(this.text, this.endLanguageCode)
+    this.fileocrService.translation(this.allText, this.endLanguageCode)
     .subscribe((data) =>{
       console.log(data[0].translations[0].text)
       this.translatedText = data[0].translations[0].text
