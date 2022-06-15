@@ -154,3 +154,9 @@ button {
  
     margin-right: 30px;
 }
+button:hover {
+    background-color:cyan ;
+    border: 2pt solid darkblue;
+    color: darkblue
+  }
+  

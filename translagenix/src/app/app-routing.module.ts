@@ -16,6 +16,7 @@ const routes:Routes = [
   {path: 'home', component: HomeComponent, canActivate: [OktaAuthGuard]},
   {path: 'login', component: LoginComponent},
   {path: 'SpeechToText', component: SpeechToTextComponent}, 
+  {path: 'leaderBoard', component: LeaderBoardComponent}, 
   {path: 'LearningWords', component: LearningWordsComponent}, 
   {
     path: 'protected',
