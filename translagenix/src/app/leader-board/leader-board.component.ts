@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { LeaderboardService } from '../leaderboard.service';
 
 @Component({
   selector: 'app-leader-board',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LeaderBoardComponent implements OnInit {
 
-  constructor() { }
+  wordRandom: Observable<any[]> = new Observable<any[]>();
+  
+  constructor(private leaderboard:LeaderboardService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {this.leaderboard.getRandomWord();
+    this.wordRandom = this.leaderboard.subject;
   }
 
 }
