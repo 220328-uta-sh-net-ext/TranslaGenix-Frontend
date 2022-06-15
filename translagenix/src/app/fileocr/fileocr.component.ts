@@ -66,6 +66,7 @@ export class FileocrComponent implements OnInit {
     return this.response;
   }
   translate():void{
+    console.log(this.allText);
     this.fileocrService.translation(this.allText, this.endLanguageCode)
     .subscribe((data) =>{
       console.log(data[0].translations[0].text)

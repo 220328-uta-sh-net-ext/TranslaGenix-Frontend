@@ -39,13 +39,8 @@
   <button (click)="printResponse()" style="display: block;margin-left: auto;margin-right: auto;justify-content: center;" class="btn btn-success">Recognize Text</button>
   <br />
   <form class="translation"  (ngSubmit)="translate()">
-    <!-- <div class="input-div">
-      <label for="text"> Text:</label>
-      <input id="text" name="text" type="text" required [(ngModel)]="text" />
-    </div> -->
-    <textarea id="image-text-card"style="display: block;margin-left: auto;margin-right: auto;justify-content: center;">
-      {{ allText }}
-    </textarea>
+
+    <textarea id="image-text-card"  name="text" type="text" style="display: block;margin-left: auto;margin-right: auto;justify-content: center;word-wrap: none;" [(ngModel)]="allText" ></textarea>
 
     <br />
     <div class="input-div" style="display: block;margin-left: 400px;margin-right: auto;justify-content: center;" >
@@ -61,7 +56,7 @@
     </div>
     <br />
   
-    <button id="translate-button" style="display: block;margin-left: auto;margin-right: auto;justify-content: center;" class="btn btn-success" type="submit" value="translation">
+    <button id="translate-button" style="display: block;margin-left: auto;margin-right: auto;justify-content: center;" class="btn btn-success" type="submit" value="translation" >
       TRANSLATE
     </button>
     <br />
