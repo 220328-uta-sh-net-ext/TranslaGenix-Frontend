@@ -1,15 +1,12 @@
-<head>
-	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-	<link rel="stylesheet" type="text/css" href="">
-	
-</head>
-<body>
-	<section class="main-content">
-		<div class="container">
-			<h1>Top Polyglots</h1>
-			<br>
-			<br>
+<h1 style="display: flex;margin-left: auto;margin-right: auto;justify-content: center;margin-top: 40px;">Top Polyglots</h1>
+<div style="display: flex;margin-left: auto;margin-right: auto;justify-content: center;margin-top: 40px;" >
+	<h2>User</h2>
+	<h2>Point</h2>
+	</div>
+<section class="main-content">
 
+		<div class="container">
+			
 			<table class="table">
 				<thead>
 					<tr>
@@ -17,132 +14,33 @@
 						<th>Points</th>
 					</tr>
 				</thead>
-				<tbody>
+<!-- 				<tbody>
 					<tr>
 						<td>
-							<div class="d-flex align-items-center">
+							<div class="d-flex align-items-center" *ngFor="let recipe of (wordRandom | async )">
 								<div class="user-info__basic">
-									<h5 class="mb-0"><!-- firstname-lastName--></h5> 
-									<p class="text-muted mb-0"> <!-- Points --> </p> 
+									<h5 class="mb-0">{{recipe.name}}</h5> 
+									<p class="text-muted mb-0"> {{recipe.point}} </p> 
 								</div>
+								
 							</div>
 						</td>
 						<td>
 							<div class="d-flex align-items-baseline"> </div>
+							
 						</td>
 						
-						
 					</tr>
-					<tr>
-						<td>
-							<div class="d-flex align-items-center">
-								<div class="user-info__basic">
-									<h5 class="mb-0"><!-- firstname-lastName--></h5> 
-									<p class="text-muted mb-0"> <!-- Points --> </p> 
-								</div>
-							</div>
-						</td>
-						<td>
-							<div class="d-flex align-items-baseline">
-							</div>
-						</td>
-						
-				
-					</tr>
-					<tr>
-						<td>
-							<div class="d-flex align-items-center">
-								
-								<div class="user-info__basic">
-									<h5 class="mb-0"><!-- firstname-lastName--></h5> 
-									<p class="text-muted mb-0"> <!-- Points --> </p> 
-								</div>
-							</div>
-						</td>
-						<td>
-							<div class="d-flex align-items-baseline">
-								
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<div class="d-flex align-items-center">
-								<div class="user-info__basic">
-									<h5 class="mb-0"><!-- firstname-lastName--></h5> 
-									<p class="text-muted mb-0"> <!-- Points --> </p> 
-								</div>
-							</div>
-						</td>
-						<td>
-							<div class="d-flex align-items-baseline">
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<div class="d-flex align-items-center">
-								<div class="user-info__basic">
-									<h5 class="mb-0"><!-- firstname-lastName--></h5> 
-									<p class="text-muted mb-0"> <!-- Points --> </p> 
-								</div>
-							</div>
-						</td>
-						<td>
-							<div class="d-flex align-items-baseline">
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<div class="d-flex align-items-center">
-								
-								<div class="user-info__basic">
-									<h5 class="mb-0"><!-- firstname-lastName--></h5> 
-									<p class="text-muted mb-0"> <!-- Points --> </p> 
-								</div>
-							</div>
-						</td>
-						<td>
-							<div class="d-flex align-items-baseline">
-								
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<div class="d-flex align-items-center">
-								<div class="user-info__basic">
-									<h5 class="mb-0"><!-- firstname-lastName--></h5> 
-									<p class="text-muted mb-0"> <!-- Points --> </p> 
-								</div>
-							</div>
-						</td>
-						<td>
-							<div class="d-flex align-items-baseline">
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<div class="d-flex align-items-center">
-								<div class="user-info__basic">
-									<h5 class="mb-0"><!-- firstname-lastName--></h5> 
-									<p class="text-muted mb-0"> <!-- Points --> </p> 
-								</div>
-							</div>
-						</td>
-						<td>
-							<div class="d-flex align-items-baseline">
-							</div>
-						</td>
-					</tr>
-				</tbody>
+					
+				</tbody> -->
 			</table>
+			<div class="d-flex align-items-center" id="boardcontent" *ngFor="let recipe of (wordRandom | async )">
+				<div class="user-info__basic">
+					<h5 class="mb-0" id ="name">{{recipe.name}} </h5> 
+					<p class="text-muted mb-0" id ="points"><B> {{recipe.point}} </B></p> 
+				</div>
+				
+			</div>
 		</div>
 	</section>
 	
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-</body>
