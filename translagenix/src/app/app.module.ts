@@ -20,6 +20,7 @@ import { LearningWordsComponent } from './learning-words/learning-words.componen
 
 import { LeaderBoardComponent } from './leader-board/leader-board.component';
 
+
 const oktaAuth = new OktaAuth({
   issuer: 'https://dev-32904001.okta.com/oauth2/default',
   clientId: '0oa5blk56g7GvMBNN5d7',
